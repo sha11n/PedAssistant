@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,7 +26,7 @@ public class GroupsActivity extends AppCompatActivity {
             return insets;
         });
         getWindow().setStatusBarColor(ContextCompat.getColor(GroupsActivity.this, R.color.statusBarColor));
-        ImageButton back_btn = findViewById(R.id.back_btn);
+        ImageView back_btn = findViewById(R.id.back_btn);
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
