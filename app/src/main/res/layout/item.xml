@@ -1,8 +1,381 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="8dp"
     app:cardCornerRadius="20dp"
-    app:cardElevation="20dp"
-    android:layout_margin="40dp"/>
+    android:layout_margin="5dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ФИО: "
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/tvstudent_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Яруллин Ильяс Ирекович"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle=""/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Пол: "
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/tvstudent_sex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="мужской"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle=""/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Дата рождения: "
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/tvstudent_birthday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="28.08.2004"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle=""/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Место жительства: "
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/tvstudent_residence"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="с. Большой Кукмор, ул. Кирова, д.2."
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle=""/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Место жительства во время учебы: "
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/tvstudent_habitation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="общежитие №1"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle=""/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Группа здоровья: "
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/tvstudent_health"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="основная"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle=""/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Занятость: "
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/tvstudent_hobby"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="программирование, волейбол"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle=""/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Состоит на учете: "
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/tvstudent_accounting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ПДН"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle=""/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Родители - участники СВО: "
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/tvstudent_svo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="отец"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle=""/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Другой член семьи - участник СВО: "
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/tvstudent_anothersvo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="брат"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle=""/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Социальная стипендия: "
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/tvstudent_scholarship"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="выплачивается"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle=""/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Гражданство: "
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/tvstudent_citizenship"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="РФ"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle=""/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Кл. руководитель: "
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/tvstudent_director"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="РФ"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle=""/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Статус семьи: "
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/tvstudent_family"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="мать-одиночка"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle=""/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Опекунство: "
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/tvstudent_guardianship"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="нет"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle=""/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

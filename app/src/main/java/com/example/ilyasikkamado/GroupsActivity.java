@@ -3,6 +3,7 @@ package com.example.ilyasikkamado;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
@@ -26,6 +27,14 @@ public class GroupsActivity extends AppCompatActivity {
             return insets;
         });
         getWindow().setStatusBarColor(ContextCompat.getColor(GroupsActivity.this, R.color.statusBarColor));
+        Button btn5 = findViewById(R.id.btn5);
+        btn5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent groupselected = new Intent(GroupsActivity.this, SelectedStudentActivity.class);
+                startActivity(groupselected);
+            }
+        });
         ImageView back_btn = findViewById(R.id.back_btn);
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
