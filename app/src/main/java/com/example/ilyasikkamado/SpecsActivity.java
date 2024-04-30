@@ -13,7 +13,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class SpecsActivity extends AppCompatActivity {
-
+    Button exit_btn, programmirovanie;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,12 +25,19 @@ public class SpecsActivity extends AppCompatActivity {
             return insets;
         });
         getWindow().setStatusBarColor(ContextCompat.getColor(SpecsActivity.this, R.color.statusBarColor));
-        Button programmirovanie = findViewById(R.id.programmirovanie);
+        programmirovanie = findViewById(R.id.programmirovanie);
+        exit_btn = findViewById(R.id.exit_btn);
         programmirovanie.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent myIntent = new Intent(SpecsActivity.this, GroupsActivity.class);
                 SpecsActivity.this.startActivity(myIntent);
+            }
+        });
+        exit_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finishAffinity();
             }
         });
     }

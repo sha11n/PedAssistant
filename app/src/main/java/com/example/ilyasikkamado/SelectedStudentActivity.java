@@ -1,6 +1,9 @@
 package com.example.ilyasikkamado;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -24,6 +27,7 @@ public class SelectedStudentActivity extends AppCompatActivity {
     DatabaseReference database;
     MyAdapter myAdapter;
     ArrayList<Student> list;
+    ImageView back_btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +38,8 @@ public class SelectedStudentActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        back_btn = findViewById(R.id.back_btn);
+
         recyclerView = findViewById(R.id.studentsList);
         database = FirebaseDatabase.getInstance().getReference("Students");
         recyclerView.setHasFixedSize(true);
@@ -57,6 +63,15 @@ public class SelectedStudentActivity extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+            }
+        });
+
+        back_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent back = new Intent(SelectedStudentActivity.this, GroupsActivity.class);
+                startActivity(back);
+                finish();
             }
         });
     }

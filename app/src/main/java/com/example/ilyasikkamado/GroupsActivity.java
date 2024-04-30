@@ -28,6 +28,7 @@ public class GroupsActivity extends AppCompatActivity {
         });
         getWindow().setStatusBarColor(ContextCompat.getColor(GroupsActivity.this, R.color.statusBarColor));
         Button btn5 = findViewById(R.id.btn5);
+
         btn5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
