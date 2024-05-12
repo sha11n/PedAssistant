@@ -32,7 +32,7 @@ public class GroupsActivity extends AppCompatActivity {
         btn5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent groupselected = new Intent(GroupsActivity.this, SelectedStudentActivity.class);
+                Intent groupselected = new Intent(GroupsActivity.this, SelectedGroupActivity451.class);
                 startActivity(groupselected);
             }
         });

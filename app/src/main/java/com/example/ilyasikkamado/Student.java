@@ -2,7 +2,7 @@ package com.example.ilyasikkamado;
 
 public class Student {
 
-    String accounting, anothersvo, birthday, citizenship, director, family, guardianship, habitation, health, hobby, name, residence, scholarship, sex, svo;
+    String accounting, anothersvo, birthday, citizenship, director, family, guardianship, habitation, health, hobby, name, residence, scholarship, sex, svo, disability, disability_info;
 
     public String getAccounting() {
         return accounting;
@@ -10,6 +10,10 @@ public class Student {
 
     public String getAnothersvo() {
         return anothersvo;
+    }
+
+    public String getDisability_info() {
+        return disability_info;
     }
 
     public String getBirthday() {
@@ -63,4 +67,9 @@ public class Student {
     public String getSvo() {
         return svo;
     }
+
+    public String getDisability() {
+        return disability;
+    }
+
 }

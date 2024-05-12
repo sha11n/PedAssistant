@@ -375,6 +375,30 @@
                 android:textStyle=""/>
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Инвалидность или ОВЗ: "
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/tvstudent_disability_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="нет"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle=""/>
+        </LinearLayout>
+
     </LinearLayout>
 
 

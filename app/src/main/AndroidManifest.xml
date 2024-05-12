@@ -15,6 +15,9 @@
         android:theme="@style/Theme.PedAssistant"
         tools:targetApi="31">
         <activity
+            android:name=".SelectedGroupActivity451"
+            android:exported="false" />
+        <activity
             android:name=".SelectedStudentActivity"
             android:exported="false" />
         <activity

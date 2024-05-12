@@ -46,6 +46,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.scholarship.setText(student.getScholarship());
         holder.sex.setText(student.getSex());
         holder.svo.setText(student.getSvo());
+        holder.disability_info.setText(student.getDisability_info());
+
     }
 
     @Override
@@ -57,7 +59,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
 
-        TextView accounting, anothersvo, birthday, citizenship, director, family, guardianship, habitation, health, hobby, name, residence, scholarship, sex, svo;
+        TextView accounting, anothersvo, birthday, citizenship, director, family, guardianship, habitation, health, hobby, name, residence, scholarship, sex, svo, disability_info;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -76,6 +78,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             scholarship = itemView.findViewById(R.id.tvstudent_scholarship);
             sex = itemView.findViewById(R.id.tvstudent_sex);
             svo = itemView.findViewById(R.id.tvstudent_svo);
+            disability_info = itemView.findViewById(R.id.tvstudent_disability_info);
 
         }
     }

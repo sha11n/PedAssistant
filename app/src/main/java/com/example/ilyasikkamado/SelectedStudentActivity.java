@@ -19,16 +19,19 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+
 public class SelectedStudentActivity extends AppCompatActivity {
     RecyclerView recyclerView;
-    DatabaseReference database;
+    DatabaseReference database, dbDisability;
     MyAdapter myAdapter;
     ArrayList<Student> list;
     ImageView back_btn;
+    String a1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,10 +43,13 @@ public class SelectedStudentActivity extends AppCompatActivity {
             return insets;
         });
         getWindow().setStatusBarColor(ContextCompat.getColor(SelectedStudentActivity.this, R.color.statusBarColor));
+
+
         back_btn = findViewById(R.id.back_btn);
 
-        recyclerView = findViewById(R.id.studentsList);
         database = FirebaseDatabase.getInstance().getReference("Students");
+
+        recyclerView = findViewById(R.id.studentsList);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -51,30 +57,85 @@ public class SelectedStudentActivity extends AppCompatActivity {
         myAdapter = new MyAdapter(this, list);
         recyclerView.setAdapter(myAdapter);
 
-        database.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
+        dbDisability = FirebaseDatabase.getInstance().getReference("Students");
 
-                for (DataSnapshot dataSnapshot :  snapshot.getChildren()){
-                    Student student = dataSnapshot.getValue(Student.class);
-                    list.add(student);
-                }
-                myAdapter.notifyDataSetChanged();
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+//        Query queryDisability = FirebaseDatabase.getInstance().getReference("Students")
+//                .orderByChild("disability")
+//                .equalTo("есть");
+//        queryDisability.addListenerForSingleValueEvent(valueEventListener);
+//
+//       Query queryGuardianship = FirebaseDatabase.getInstance().getReference("Students")
+//               .orderByChild("guardianship")
+//               .equalTo("сирота");
+//       queryGuardianship.addListenerForSingleValueEvent(valueEventListener);
 
-            }
-        });
 
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent back = new Intent(SelectedStudentActivity.this, GroupsActivity.class);
+                Intent back = new Intent(SelectedStudentActivity.this, SelectedGroupActivity451.class);
                 startActivity(back);
-                finish();
+                onPause();
             }
         });
+        // switch
+
     }
+
+    @Override
+    protected void onStart()
+    {
+        super.onStart();
+        a1 = getIntent().getStringExtra("a1");
+        String choose = a1;
+        Query queryDisability = FirebaseDatabase.getInstance().getReference("Students")
+                .orderByChild("disability")
+                .equalTo("есть");
+        queryDisability.addListenerForSingleValueEvent(valueEventListener);
+
+        Query queryGuardianship = FirebaseDatabase.getInstance().getReference("Students")
+                .orderByChild("guardianship")
+                .equalTo("сирота");
+        queryGuardianship.addListenerForSingleValueEvent(valueEventListener);
+        switch (choose){
+            case "all":
+                database.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        list.clear();
+                        for (DataSnapshot dataSnapshot :  snapshot.getChildren()){
+                            Student student = dataSnapshot.getValue(Student.class);
+                            list.add(student);
+                        }
+                        myAdapter.notifyDataSetChanged();
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+            case "disability":
+                queryDisability.addListenerForSingleValueEvent(valueEventListener);
+            case "guardianship":
+                queryGuardianship.addListenerForSingleValueEvent(valueEventListener);
+        }
+    }
+    ValueEventListener valueEventListener = new ValueEventListener() {
+        @Override
+        public void onDataChange(@NonNull DataSnapshot snapshot) {
+            list.clear();
+            for (DataSnapshot dataSnapshot :  snapshot.getChildren()){
+                Student student = dataSnapshot.getValue(Student.class);
+                list.add(student);
+            }
+            myAdapter.notifyDataSetChanged();
+        }
+
+        @Override
+        public void onCancelled(@NonNull DatabaseError error) {
+
+        }
+    };
 }
