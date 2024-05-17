@@ -46,6 +46,14 @@ public class SelectedStudentActivity extends AppCompatActivity {
 
 
         back_btn = findViewById(R.id.back_btn);
+        back_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent back = new Intent(SelectedStudentActivity.this, SelectedGroupActivity451.class);
+                startActivity(back);
+                finish();
+            }
+        });
 
         database = FirebaseDatabase.getInstance().getReference("Students");
 
@@ -57,48 +65,22 @@ public class SelectedStudentActivity extends AppCompatActivity {
         myAdapter = new MyAdapter(this, list);
         recyclerView.setAdapter(myAdapter);
 
-        dbDisability = FirebaseDatabase.getInstance().getReference("Students");
-
-
-//        Query queryDisability = FirebaseDatabase.getInstance().getReference("Students")
-//                .orderByChild("disability")
-//                .equalTo("есть");
-//        queryDisability.addListenerForSingleValueEvent(valueEventListener);
-//
-//       Query queryGuardianship = FirebaseDatabase.getInstance().getReference("Students")
-//               .orderByChild("guardianship")
-//               .equalTo("сирота");
-//       queryGuardianship.addListenerForSingleValueEvent(valueEventListener);
-
-
-        back_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent back = new Intent(SelectedStudentActivity.this, SelectedGroupActivity451.class);
-                startActivity(back);
-                onPause();
-            }
-        });
-        // switch
-
-    }
-
-    @Override
-    protected void onStart()
-    {
-        super.onStart();
         a1 = getIntent().getStringExtra("a1");
-        String choose = a1;
+
         Query queryDisability = FirebaseDatabase.getInstance().getReference("Students")
                 .orderByChild("disability")
                 .equalTo("есть");
-        queryDisability.addListenerForSingleValueEvent(valueEventListener);
-
         Query queryGuardianship = FirebaseDatabase.getInstance().getReference("Students")
                 .orderByChild("guardianship")
                 .equalTo("сирота");
-        queryGuardianship.addListenerForSingleValueEvent(valueEventListener);
-        switch (choose){
+        Query queryincompleteFamily = FirebaseDatabase.getInstance().getReference("Students")
+                .orderByChild("family")
+                .equalTo("мать-одиночка");
+        Query querysvoFamily = FirebaseDatabase.getInstance().getReference("Students")
+                .orderByChild("svo")
+                .equalTo("отец");
+
+        switch (a1){
             case "all":
                 database.addValueEventListener(new ValueEventListener() {
                     @Override
@@ -116,11 +98,24 @@ public class SelectedStudentActivity extends AppCompatActivity {
 
                     }
                 });
+                break;
             case "disability":
                 queryDisability.addListenerForSingleValueEvent(valueEventListener);
+                break;
+
             case "guardianship":
                 queryGuardianship.addListenerForSingleValueEvent(valueEventListener);
+                break;
+
+            case "incomplete_family":
+                queryincompleteFamily.addListenerForSingleValueEvent(valueEventListener);
+                break;
+            case "svo_group":
+                querysvoFamily.addListenerForSingleValueEvent(valueEventListener);
+                break;
         }
+
+
     }
     ValueEventListener valueEventListener = new ValueEventListener() {
         @Override

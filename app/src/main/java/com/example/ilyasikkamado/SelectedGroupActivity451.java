@@ -19,8 +19,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class SelectedGroupActivity451 extends AppCompatActivity {
     ImageView back_btn;
-    Button all_group, disability_group;
-    String a1;
+    Button all_group, disability_group, siroti_group, incomplete_family, svo_group;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +35,9 @@ public class SelectedGroupActivity451 extends AppCompatActivity {
         back_btn = findViewById(R.id.back_btn);
         all_group = findViewById(R.id.all_group);
         disability_group = findViewById(R.id.disability_group);
-
+        siroti_group = findViewById(R.id.siroti_group);
+        incomplete_family = findViewById(R.id.family_group);
+        svo_group = findViewById(R.id.svo_group);
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,7 +51,6 @@ public class SelectedGroupActivity451 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent all_group = new Intent(SelectedGroupActivity451.this, SelectedStudentActivity.class);
-                a1 = "all";
                 all_group.putExtra("a1", "all");
                 startActivity(all_group);
 
@@ -61,10 +61,36 @@ public class SelectedGroupActivity451 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent disability_group = new Intent(SelectedGroupActivity451.this, SelectedStudentActivity.class);
-                a1 = "disability";
                 disability_group.putExtra("a1", "disability");
                 startActivity(disability_group);
 
+            }
+        });
+
+        siroti_group.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent siroti_group = new Intent(SelectedGroupActivity451.this, SelectedStudentActivity.class);
+                siroti_group.putExtra("a1", "guardianship");
+                startActivity(siroti_group);
+            }
+        });
+
+        incomplete_family.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent incomplete_family = new Intent(SelectedGroupActivity451.this, SelectedStudentActivity.class);
+                incomplete_family.putExtra("a1", "incomplete_family");
+                startActivity(incomplete_family);
+            }
+        });
+
+        svo_group.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent svo_group = new Intent(SelectedGroupActivity451.this, SelectedStudentActivity.class);
+                svo_group.putExtra("a1", "svo_group");
+                startActivity(svo_group);
             }
         });
 
