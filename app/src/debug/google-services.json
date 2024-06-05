@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "571868822788",
+    "firebase_url": "https://pedassistantbase-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "pedassistantbase",
+    "storage_bucket": "pedassistantbase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:571868822788:android:7a50edc060a4f8ef67e451",
+        "android_client_info": {
+          "package_name": "com.example.ilyasikkamado"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcjQeRh_tVPmH_Zbdw0PBgiGe0iiBZD3Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
